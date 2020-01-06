@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-model href="https://raw.githubusercontent.com/aetos382/Aerie.PowerShell.Schemas/master/PowerShellFormatDefinitions.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/aetos382/Aerie.PowerShell.Schemas/master/PowerShellFormatDefinitions.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Configuration>
+    <ViewDefinitions>
+        <View>
+            <Name>PhysicalMemoryTableView</Name>
+            <ViewSelectedBy>
+                <TypeName>Microsoft.Management.Infrastructure.CimInstance#root/cimv2/Win32_PhysicalMemory</TypeName>
+            </ViewSelectedBy>
+            <TableControl>
+                <TableRowEntries>
+                    <TableRowEntry></TableRowEntry>
+                </TableRowEntries>
+            </TableControl>
+        </View>
+        <View>
+            <Name>PhysicalMemoryListView</Name>
+            <ViewSelectedBy>
+                <TypeName>Microsoft.Management.Infrastructure.CimInstance#root/cimv2/Win32_PhysicalMemory</TypeName>
+            </ViewSelectedBy>
+            <ListControl>
+                <ListEntries>
+                    <ListEntry>
+                        <ListItems>
+                            <ListItem></ListItem>
+                        </ListItems>
+                    </ListEntry>
+                </ListEntries>
+            </ListControl>
+        </View>
+        <View>
+            <Name>PhysicalMemoryWideView</Name>
+            <ViewSelectedBy>
+                <TypeName>Microsoft.Management.Infrastructure.CimInstance#root/cimv2/Win32_PhysicalMemory</TypeName>
+            </ViewSelectedBy>
+            <WideControl>
+                <WideEntries>
+                    <WideEntry>
+                        <WideItem></WideItem>
+                    </WideEntry>
+                </WideEntries>
+            </WideControl>
+        </View>
+    </ViewDefinitions>
+</Configuration>

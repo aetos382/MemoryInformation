@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-model href="https://raw.githubusercontent.com/aetos382/Aerie.PowerShell.Schemas/master/PowerShellTypeDefinitions.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/aetos382/Aerie.PowerShell.Schemas/master/PowerShellTypeDefinitions.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Types>
+    <Type>
+        <Name>Microsoft.Management.Infrastructure.CimInstance#root/cimv2/Win32_PhysicalMemory</Name>
+        <Members>
+            <ScriptProperty>
+                <Name>FormattedCapacity</Name>
+                <GetScriptBlock>
+                    if ($this.Capacity -ge 1GB) {
+                        '{0} GB' -f ($this.Capacity / 1GB)
+                    }
+                    elseif ($this.Capacity -ge 1MB) {
+                        '{0} MB' -f ($this.Capacity / 1MB)
+                    }
+                    elseif ($this.Capacity -ge 1KB) {
+                        '{0} KB' -f ($this.Capacity / 1KB)
+                    }
+                    else {
+                        $this.Capacity
+                    }
+                </GetScriptBlock>
+            </ScriptProperty>
+            <ScriptProperty>
+                <Name>FormattedFormFactor</Name>
+                <GetScriptBlock>
+                    switch ($this.FormFactor) {
+                        8 { 'DIMM' }
+                        
+                        default {
+                            'Unknown ({0})' -f ($this.FormFactor)
+                        }
+                    }
+                </GetScriptBlock>
+            </ScriptProperty>
+            <ScriptProperty>
+                <Name>FormattedMemoryType</Name>
+                <GetScriptBlock>
+                    switch ($this.SMBIOSMemoryType) {
+                        26 { 'DDR4' }
+                        
+                        default {
+                            'Unknown ({0})' -f $this.SMBIOSMemoryType
+                        }
+                    }
+                </GetScriptBlock>
+            </ScriptProperty>
+            <ScriptProperty>
+                <Name>FormattedManufacturer</Name>
+                <GetScriptBlock>
+                    switch ($this.Manufacturer) {
+                        '029e' { 'Corsair' }
+                        
+                        default {
+                            'Unknown ({0})' -f $this.Manufacturer
+                        }
+                    }
+                </GetScriptBlock>
+            </ScriptProperty>
+            <MemberSet>
+                <Name>PSStandardMembers</Name>
+                <Members>
+                    <PropertySet>
+                        <Name>DefaultDisplayPropertySet</Name>
+                        <ReferencedProperties>
+                            <Name>FormattedMemoryType</Name>
+                            <Name>ConfiguredClockSpeed</Name>
+                            <Name>FormattedCapacity</Name>
+                            <Name>FormattedManufacturer</Name>
+                            <Name>PartNumber</Name>
+                        </ReferencedProperties>
+                    </PropertySet>
+                </Members>
+            </MemberSet>
+        </Members>
+    </Type>
+</Types>
