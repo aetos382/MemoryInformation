@@ -88,10 +88,11 @@
                         <Name>DefaultDisplayPropertySet</Name>
                         <ReferencedProperties>
                             <Name>FormattedMemoryType</Name>
+                            <Name>FormattedFormFactor</Name>
                             <Name>ConfiguredClockSpeed</Name>
                             <Name>FormattedCapacity</Name>
-                            <Name>FormattedManufacturer</Name>
                             <Name>PartNumber</Name>
+                            <Name>FormattedManufacturer</Name>
                         </ReferencedProperties>
                     </PropertySet>
                 </Members>
