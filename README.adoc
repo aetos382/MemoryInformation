@@ -1,0 +1,9 @@
+= MemoryInformation
+
+[.lead]
+This is a PowerShell module that gets information about the physical memory modules on the computer.
+
+== Usage
+. Clone this repository
+. Import-Module <cloned path>
+. Get-PhysicalMemoryInfo
