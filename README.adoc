@@ -3,6 +3,8 @@
 [.lead]
 This is a PowerShell module that gets information about the physical memory modules on the computer.
 
+Only supported on Windows.
+
 == Usage
 . Clone this repository
 . Import-Module <cloned path>
